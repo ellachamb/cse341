@@ -2,18 +2,69 @@
 ###
 GET http://localhost:8080/contacts 
 ###
-GET http://localhost:8080/contacts/6636fc6f875d0dc5921cc709
+GET http://localhost:8080/contacts/663ffd5360c3ec4461c1103c
 ###
-GET http://localhost:8080/contacts/6636fc6f875d0dc5921cc70a
-### 
-GET http://localhost:8080/contacts/6636fc6f875d0dc5921cc70b
+GET http://localhost:8080/contacts/663ffd9c60c3ec4461c1103d
+
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "email": "mjohnson@gmail.com", 
+    "favoriteColor": "Green",
+    "birthday": "04/02/1987"
+}
+
+### Put contact
+PUT http://localhost:8080/contacts/663ffd9c60c3ec4461c1103d HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName":"Doe",
+    "email": "test@gmail.com",
+    "favoriteColor":"Green",
+    "birthday": "03/21/91"
+}
+
+### Delete Contact
+DELETE http://localhost:8080/contacts/6636fc6f875d0dc5921cc70a HTTP/1.1
 
 // PRODUCTION Deploy 
 ### 
-GET https://cse341-1-802v.onrender.com/contacts
+GET https://cse341-1-802v.onrender.com/contacts 
+###
+GET https://cse341-1-802v.onrender.com/contacts/663ffd5360c3ec4461c1103c
+###
+GET https://cse341-1-802v.onrender.com/contacts/663ffd9c60c3ec4461c1103d
+
+### Create contact
+POST https://cse341-1-802v.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "email": "mjohnson@gmail.com", 
+    "favoriteColor": "Green",
+    "birthday": "04/02/1987"
+}
+
+### Put contact
+PUT https://cse341-1-802v.onrender.com/contacts/663ffd9c60c3ec4461c1103d HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName":"Doe",
+    "email": "test@gmail.com",
+    "favoriteColor":"Green",
+    "birthday": "03/21/91"
+}
+
+### Delete Contact
+DELETE https://cse341-1-802v.onrender.com/contacts/6636fc6f875d0dc5921cc70a HTTP/1.1
 ### 
-GET https://cse341-1-802v.onrender.com/contacts/6636fc6f875d0dc5921cc709
-### 
-GET https://cse341-1-802v.onrender.com/contacts/6636fc6f875d0dc5921cc70a
-### 
-GET https://cse341-1-802v.onrender.com/contacts/6636fc6f875d0dc5921cc70b
