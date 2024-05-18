@@ -1,5 +1,7 @@
 // LOCALHOST
 ###
+GET http://localhost:8080/api-docs 
+###
 GET http://localhost:8080/contacts 
 ###
 GET http://localhost:8080/contacts/663ffd5360c3ec4461c1103c
@@ -31,7 +33,7 @@ Content-Type: application/json
 }
 
 ### Delete Contact
-DELETE http://localhost:8080/contacts/6636fc6f875d0dc5921cc70a HTTP/1.1
+DELETE http://localhost:8080/contacts/663fffef416b136a000860e0 HTTP/1.1
 
 // PRODUCTION Deploy 
 ### 
