@@ -13,11 +13,11 @@ POST http://localhost:8080/contacts HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Michael",
-    "lastName": "Johnson",
-    "email": "mjohnson@gmail.com", 
-    "favoriteColor": "Green",
-    "birthday": "04/02/1987"
+    "firstName": "Kevin",
+    "lastName": "Louis",
+    "email": "klouis@gmail.com", 
+    "favoriteColor": "Black",
+    "birthday": "03/09/90"
 }
 
 ### Put contact
@@ -58,15 +58,15 @@ Content-Type: application/json
 }
 
 ### Put contact
-PUT https://cse341-1-802v.onrender.com/contacts/663ffd9c60c3ec4461c1103d HTTP/1.1
+PUT https://cse341-1-802v.onrender.com/contacts/66490de3952f2b530462df09 HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "John",
-    "lastName":"Doe",
-    "email": "test@gmail.com",
-    "favoriteColor":"Green",
-    "birthday": "03/21/91"
+    "firstName": "Mandy",
+    "lastName": "Green",
+    "email": "mgreen@gmail.com", 
+    "favoriteColor": "Green",
+    "birthday": "04/02/1987"
 }
 
 ### Delete Contact
