@@ -49,8 +49,8 @@ Content-Type: application/json
 
 {
     "firstName": "Michael",
-    "lastName": "Johnson",
-    "email": "mjohnson@gmail.com", 
+    "lastName": "Green",
+    "email": "mgreen@gmail.com", 
     "favoriteColor": "Green",
     "birthday": "04/02/1987"
 }
