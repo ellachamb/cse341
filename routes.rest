@@ -37,7 +37,7 @@ DELETE http://localhost:8080/contacts/663fffef416b136a000860e0 HTTP/1.1
 
 // PRODUCTION Deploy 
 ### 
-GET http://cse341-1-802v.onrender.com/api-docs 
+GET https://cse341-1-802v.onrender.com/api-docs 
 ###
 GET https://cse341-1-802v.onrender.com/contacts 
 ###
