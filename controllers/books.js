@@ -2,7 +2,7 @@ const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
-  const result = await mongodb.getDb().db().collection("contacts").find();
+  const result = await mongodb.getDb().db().collection("books").find();
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(lists);
@@ -14,7 +14,7 @@ const getSingle = async (req, res) => {
   const result = await mongodb
     .getDb()
     .db()
-    .collection("contacts")
+    .collection("books")
     .find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
@@ -22,62 +22,64 @@ const getSingle = async (req, res) => {
   });
 };
 
-const createContact = async (req, res) => {
-  const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
+const createBook = async (req, res) => {
+  const books = {
+    title: req.body.title,
+    author: req.body.author,
+    yearPublished: req.body.yearPublished,
+    pages: req.body.pages,
+    rating: req.body.rating,
+    ISBN: req.body.ISBN,
+    genre: req.body.genre,
+    language: req.body.language,
   };
   const response = await mongodb
     .getDb()
     .db()
-    .collection("contacts")
-    .insertOne(contact);
+    .collection("books")
+    .insertOne(books);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
     res
       .status(500)
-      .json(
-        response.error || "Some error occurred while creating the contact."
-      );
+      .json(response.error || "Some error occurred while creating the book.");
   }
 };
 
-const updateContact = async (req, res) => {
+const updateBook = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
+  const books = {
+    title: req.body.title,
+    author: req.body.author,
+    yearPublished: req.body.yearPublished,
+    pages: req.body.pages,
+    rating: req.body.rating,
+    ISBN: req.body.ISBN,
+    genre: req.body.genre,
+    language: req.body.language,
   };
   const response = await mongodb
     .getDb()
     .db()
-    .collection("contacts")
-    .replaceOne({ _id: userId }, contact);
+    .collection("books")
+    .replaceOne({ _id: userId }, books);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
     res
       .status(500)
-      .json(
-        response.error || "Some error occurred while updating the contact."
-      );
+      .json(response.error || "Some error occurred while updating the book.");
   }
 };
 
-const deleteContact = async (req, res) => {
+const deleteBook = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDb()
     .db()
-    .collection("contacts")
+    .collection("books")
     .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
@@ -85,16 +87,14 @@ const deleteContact = async (req, res) => {
   } else {
     res
       .status(500)
-      .json(
-        response.error || "Some error occurred while deleting the contact."
-      );
+      .json(response.error || "Some error occurred while deleting the book.");
   }
 };
 
 module.exports = {
   getAll,
   getSingle,
-  createContact,
-  updateContact,
-  deleteContact,
+  createBook,
+  updateBook,
+  deleteBook,
 };

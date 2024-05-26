@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Contacts API",
+    "description": "Books API",
     "version": "1.0.0"
   },
   "host": "cse341-1-802v.onrender.com",
@@ -21,7 +21,7 @@
         }
       }
     },
-    "/contacts/": {
+    "/books/": {
       "get": {
         "description": "",
         "produces": [
@@ -42,19 +42,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
-                "lastName": {
+                "author": {
                   "example": "any"
                 },
-                "email": {
+                "yearPublished": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "pages": {
                   "example": "any"
                 },
-                "birthday": {
+                "rating": {
+                  "example": "any"
+                },
+                "ISBN": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "language": {
                   "example": "any"
                 }
               }
@@ -71,7 +80,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/books/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -106,19 +115,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
-                "lastName": {
+                "author": {
                   "example": "any"
                 },
-                "email": {
+                "yearPublished": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "pages": {
                   "example": "any"
                 },
-                "birthday": {
+                "rating": {
+                  "example": "any"
+                },
+                "ISBN": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "language": {
                   "example": "any"
                 }
               }

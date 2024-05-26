@@ -1,0 +1,22 @@
+[
+  {
+    "title": "The Silent Patient",
+    "author":"Alex Michaelides",
+    "yearPublished": "2018",
+    "pages":"336",
+    "rating": "4.1", 
+    "ISBN": "9781250301697",
+    "genre": "Thriller",
+    "language": "English"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "yearPublished": "1925",
+    "pages": "180",
+    "rating": "3.9", 
+    "ISBN": "9780743273565",
+    "genre": "Fiction",
+    "language": "English"
+  }
+  ]
