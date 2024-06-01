@@ -1,5 +1,6 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
+const { validateISBN } = require("../util/validation");
 
 const getAll = async (req, res) => {
   const result = await mongodb.getDb().db().collection("books").find();
@@ -33,6 +34,13 @@ const createBook = async (req, res) => {
     genre: req.body.genre,
     language: req.body.language,
   };
+
+  const { error } = validateISBN(books.ISBN);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
+
   const response = await mongodb
     .getDb()
     .db()
