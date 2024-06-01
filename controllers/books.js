@@ -37,7 +37,7 @@ const createBook = async (req, res) => {
 
   const { error } = validateISBN(books.ISBN);
   if (error) {
-    res.status(400).send(error.details[0].message);
+    res.status(400).send("Invalid ISBN");
     return;
   }
 
@@ -67,6 +67,11 @@ const updateBook = async (req, res) => {
     genre: req.body.genre,
     language: req.body.language,
   };
+  const { error } = validateISBN(books.ISBN);
+  if (error) {
+    res.status(400).send("Invalid ISBN");
+    return;
+  }
   const response = await mongodb
     .getDb()
     .db()
